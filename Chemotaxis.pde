@@ -1,13 +1,42 @@
- //declare bacteria variables here   
- void setup()   
- {     
- 	//initialize bacteria variables here   
- }   
- void draw()   
- {    
- 	//move and show the bacteria   
- }  
- class Bacteria    
- {     
- 	//lots of java!   
- }    
+Bacteria [] bob;
+void setup(){
+ size(500,500);
+ bob = new Bacteria[100];
+ for(int i = 0; i < bob.length; i++){
+   bob[i] = new Bacteria();
+ }
+}
+class Bacteria {
+  int myX, myY, myColor;
+  Bacteria(){ 
+    myX = (int)(Math.random()*500);
+    myY = (int)(Math.random()*500);
+    myColor = color(0, 200, 0);
+  }
+  void move(){
+   if(mouseX > myX){
+     myX = myX + (int)(Math.random()*2);
+   }
+   else{
+     myX = myX +(int)(Math.random()*2)-1;
+   }
+   if(mouseY > myY){
+     myY = myY + (int)(Math.random()*2);
+   }
+   else{
+     myY = myY + (int)(Math.random()*2)-1;
+   }
+  }
+  void show(){
+    fill(myColor);
+    ellipse(myX, myY, 20,20);
+  }
+}
+
+void draw(){
+  background(0);
+  for(int i = 0; i < bob.length; i++){
+    bob[i].move();
+    bob[i].show();
+  }
+}
