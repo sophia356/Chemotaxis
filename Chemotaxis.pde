@@ -15,16 +15,16 @@ class Bacteria {
   }
   void move(){
    if(mouseX > myX){
-     myX = myX + (int)(Math.random()*2);
+     myX = myX + (int)(Math.random()*3);
    }
    else{
-     myX = myX +(int)(Math.random()*2)-1;
+     myX = myX +(int)(Math.random()*3)-2;
    }
    if(mouseY > myY){
-     myY = myY + (int)(Math.random()*2);
+     myY = myY + (int)(Math.random()*3);
    }
    else{
-     myY = myY + (int)(Math.random()*2)-1;
+     myY = myY + (int)(Math.random()*3)-2;
    }
   }
   void show(){
